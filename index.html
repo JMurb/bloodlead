@@ -193,7 +193,7 @@
                 density > 10 ? '#c51b8a' :
                     density > 5 ? '#f768a1' :
                         density > 0 ? '#fbb4b9' :
-                            density == 0 ? 'white' :
+                            density == 0 ? '#ffffff' :
                             '#cccccc';
         };
         // Add Scale Bar to Map
@@ -211,7 +211,8 @@
             div.innerHTML += '<i style="background: #7a0177"></i><p>15+</p>';
             div.innerHTML += '<i style="background: #c51b8a"></i><p>10-15</p>';
             div.innerHTML += '<i style="background: #f768a1"></i><p>5-10</p>';
-            div.innerHTML += '<i style="background: #fbb4b9"></i><p>0-5</p>';
+            div.innerHTML += '<i style="background: #fbb4b9"></i><p>1-5</p>';
+            div.innerHTML += '<i style="background: #ffffff"></i><p>0</p>';
             div.innerHTML += '<hr>';
             div.innerHTML += '<i style="background: #cccccc"></i><p>No Data</p>';
 
