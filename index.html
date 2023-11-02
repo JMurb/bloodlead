@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Leaflet Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <style>
+    <!-- <style ref="style.css">
         html {
             height: 100%;
         }
@@ -67,7 +67,7 @@
                 line-height: 18px;
                 margin: 0;
             }
-        }
+        } -->
     </style>
 </head>
 
@@ -75,9 +75,10 @@
     <!-- Our web map and content will go here -->
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="map.js"></script>
     <div id="map" class="mapelement">
     </div>
-    <script src="map.js"></script>
+
     <!-- var map = L.map('map', { center: [40, -75.155399], zoom: 11 });
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
         map.doubleClickZoom.disable();
