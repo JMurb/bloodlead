@@ -1,10 +1,11 @@
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA'
 var map = L.map('map', { center: [40, -75.155399], zoom: 11 });
 
 // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA';
+    mbUrl = "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA";
 
 var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr, token: pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA }),
     streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr, token: pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA });
