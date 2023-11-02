@@ -73,11 +73,11 @@
 
 <body>
     <!-- Our web map and content will go here -->
+    <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        <div id="map" class="mapelement">
-        </div>
+
 
         var map = L.map('map', { center: [40, -75.155399], zoom: 11 });
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
