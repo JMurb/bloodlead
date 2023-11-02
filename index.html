@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <title>Leaflet Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
     <style>
         html {
             height: 100%;
@@ -139,7 +138,7 @@
                         mouseout: resetHighlight,
                         click: zoomFeature
                     });
-                    layer.bindPopup('# children over 5%: ' + feature.properties.num_bll_5p);
+                    layer.bindPopup('# children over 5%: ' + feature.properties.perc_5plus);
                 }
             }).addTo(map);
             var overlayLayer = {
@@ -205,8 +204,9 @@
         legend.onAdd = function (map) {
             // Create Div Element and Populate it with HTML
             var div = L.DomUtil.create('div', 'legend');
-            div.innerHTML += '<b>Blood lead level</b><br />';
-            div.innerHTML += 'by census tract<br />';
+            div.innerHTML += '<b>% of Children under 6 with Tested</b><br />';
+            div.innerHTML += '<b>Blood Lead Levels >= 5 μg/dL</b><br />';
+            div.innerHTML += '<b>by census tract</b>';
             div.innerHTML += '<br>';
             div.innerHTML += '<i style="background: #7a0177"></i><p>15+</p>';
             div.innerHTML += '<i style="background: #c51b8a"></i><p>10-15</p>';
