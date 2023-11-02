@@ -186,11 +186,14 @@
             };
         }
         // Set function for color ramp, you can use a better palette
+
+        
         function setColorFunc(density) {
             return density > 15 ? '#7a0177' :
                 density > 10 ? '#c51b8a' :
                     density > 5 ? '#f768a1' :
                         density > 0 ? '#fbb4b9' :
+                            density == 0 ? 'white' :
                             '#cccccc';
         };
         // Add Scale Bar to Map
