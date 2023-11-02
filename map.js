@@ -1,14 +1,13 @@
 var map = L.map('map', { center: [40, -75.155399], zoom: 11 });
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-map.doubleClickZoom.disable();
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+
+// L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+    mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA';
 
-var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr }),
-    streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr });
+var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr, token: pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA }),
+    streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr, token: pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA });
 
 var baseMaps = {
     "grayscale": grayscale,
@@ -25,8 +24,8 @@ var universityLayer = {
 
 
 // popup with coordinates
-/*
-        var popup = L.popup();
+
+var popup = L.popup();
 
 
 
@@ -34,18 +33,18 @@ var universityLayer = {
 
 
 
-        // Write function to set Properties of the Popup
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("Selected location: " + e.latlng.lng.toFixed(4) + " W, " + e.latlng.lat.toFixed(4) + " N")
-                .openOn(map);
-        }
+// Write function to set Properties of the Popup
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("Selected location: " + e.latlng.lng.toFixed(4) + " W, " + e.latlng.lat.toFixed(4) + " N")
+        .openOn(map);
+}
 
 
 // Listen for a click event on the Map element
 map.on('click', onMapClick);
-*/
+
 // load GeoJSON from an external file
 var neighborhoodsLayer = null;
 $.getJSON("data/blood_lead.geojson", function (data) {
@@ -110,7 +109,7 @@ function setColorFunc(density) {
     return density > 15 ? '#7a0177' :
         density > 10 ? '#c51b8a' :
             density > 5 ? '#f768a1' :
-                density > 0 ? '#fbb4b9' :
+                density > -1 ? '#fbb4b9' :
                     '#cccccc';
 };
 // Add Scale Bar to Map
