@@ -1,4 +1,3 @@
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam11cmIiLCJhIjoiY2xvaDg0NHh1MGR6bTJ0czJodmNhMWoxNCJ9.FuXTCdTbyHhX8sDG2_O5FA'
 var map = L.map('map', { center: [40, -75.155399], zoom: 11 });
 
 // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
